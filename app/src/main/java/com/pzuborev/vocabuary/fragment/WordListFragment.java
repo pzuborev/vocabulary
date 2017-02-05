@@ -16,7 +16,6 @@ import com.pzuborev.vocabuary.R;
 import com.pzuborev.vocabuary.Vocabulary;
 import com.pzuborev.vocabuary.Word;
 import com.pzuborev.vocabuary.activity.VocabularyPagerActivity;
-import com.pzuborev.vocabuary.fragment.WordFragment;
 
 import java.util.ArrayList;
 
@@ -54,9 +53,9 @@ public class WordListFragment extends ListFragment {
             }
             Word word = getItem(position);
             TextView originalWord = (TextView) convertView.findViewById(R.id.list_item_original_word);
-            originalWord.setText(word.getValue());
+            originalWord.setText(word.getOriginalWord());
             TextView wordTranslation = (TextView) convertView.findViewById(R.id.list_item_word_translation);
-            wordTranslation.setText(word.getTranslation());
+            wordTranslation.setText(word.getWordTranslation());
             return convertView;
         }
     }

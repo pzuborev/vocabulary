@@ -1,39 +1,48 @@
 package com.pzuborev.vocabuary;
 
 import android.content.Context;
-import android.support.v4.app.Fragment;
+import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.UUID;
 
 public class Vocabulary {
+    private static final String TAG = "Vocabulary";
     private static Vocabulary mVocabulary;
+    private final String mFileName = "vocabulary.json";
     private Context mContext;
     private ArrayList<Word> mWords;
+    private VocabularyJSONSerializer mJSONSerializer;
 
     private Vocabulary(Context context) {
         mContext = context;
-        mWords = new ArrayList<Word>();
-
-        for (int i = 0; i < 10; i++) {
-            mWords.add(new Word("word #"+i, "translation #"+i));
+        mJSONSerializer = new VocabularyJSONSerializer(context, mFileName);
+        try {
+            mWords = mJSONSerializer.loadWord();
+            Collections.shuffle(mWords);
+        } catch (Exception e) {
+            Log.e(TAG, "Error on vocabulary loading" + e.getMessage(), e);
+            mWords = new ArrayList<>();
         }
+
+
     }
 
-    public Word findWord(UUID wordId){
+    public static Vocabulary getVocabulary(Context context) {
+        if (mVocabulary == null) {
+            mVocabulary = new Vocabulary(context.getApplicationContext());
+        }
+        return mVocabulary;
+    }
+
+    public Word findWord(UUID wordId) {
         Word word = null;
         for (int i = 0; i < mWords.size(); i++) {
             word = mWords.get(i);
             if (word.getId().equals(wordId)) break;
         }
         return word;
-    }
-
-    public static Vocabulary getVocabulary(Context context){
-        if (mVocabulary == null){
-            mVocabulary = new Vocabulary(context.getApplicationContext());
-        }
-        return mVocabulary;
     }
 
     public int wordsCount() {
@@ -51,10 +60,18 @@ public class Vocabulary {
     public int getPosition(Word word) {
         int result = -1;
         for (int i = 0; i < mWords.size(); i++) {
-            if (mWords.get(i).getId().equals(word.getId())){
+            if (mWords.get(i).getId().equals(word.getId())) {
                 result = i;
             }
         }
         return result;
+    }
+
+    public void saveWords() {
+        try {
+            mJSONSerializer.saveWords(mWords);
+        } catch (Exception e) {
+            Log.e(TAG, "Не удалось сохранить данные в файл", e);
+        }
     }
 }
