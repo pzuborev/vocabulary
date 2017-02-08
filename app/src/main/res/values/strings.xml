@@ -6,4 +6,5 @@
     <string name="menu_item_shuffle">Shuffle words</string>
     <string name="menu_item_sort">Sort words</string>
     <string name="menu_item_guess">Guess word translation</string>
+    <string name="menu_item_swap_word_and_translation">Swap word and translation</string>
 </resources>

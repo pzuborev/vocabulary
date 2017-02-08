@@ -101,11 +101,26 @@ public class WordListFragment extends ListFragment {
                     i.putExtra(WordFragment.P_WORD_ID, mWords.get(0).getId());
                     startActivity(i);
                 }
-
+                return true;
+            case R.id.menu_item_swap_word_and_translation:
+                if(mWords.size() > 0) {
+                    swapOriginalWordsAndTranslation();
+                    notifyDataChange();
+                    return true;
+                }
                 return true;
             default:  return super.onOptionsItemSelected(item);
         }
 
+    }
+
+    private void swapOriginalWordsAndTranslation() {
+        String str;
+        for (Word w: mWords) {
+            str = w.getOriginalWord();
+            w.setOriginalWord(w.getWordTranslation());
+            w.setWordTranslation(str);
+        }
     }
 
     private void shuffleWords() {

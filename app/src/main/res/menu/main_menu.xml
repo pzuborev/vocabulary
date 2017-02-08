@@ -12,9 +12,16 @@
         app:showAsAction="ifRoom|withText"
         android:icon="@android:drawable/ic_menu_sort_alphabetically"/>
     <item
+        android:id="@+id/menu_item_swap_word_and_translation"
+        android:title="@string/menu_item_swap_word_and_translation"
+        app:showAsAction="ifRoom|withText"
+        android:icon="@android:drawable/ic_menu_revert"/>
+    <item
         android:id="@+id/menu_item_guess"
         android:title="@string/menu_item_guess"
         app:showAsAction="ifRoom|withText"
         android:icon="@android:drawable/ic_menu_view"/>
+
+
 
 </menu>
