@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Vocabulary</string>
     <string name="show_word_translation">Translate</string>
+    <string name="err_file_not_found">File not found</string>
+    <string name="remember_the_word">Do you remember the word?</string>
+    <string name="menu_item_shuffle">Shuffle words</string>
+    <string name="menu_item_sort">Sort words</string>
+    <string name="menu_item_guess">Guess word translation</string>
 </resources>

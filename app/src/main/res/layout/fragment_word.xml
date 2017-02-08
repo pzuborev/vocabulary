@@ -1,46 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical"
-              android:gravity="center"
-              android:weightSum="1">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
 
-    <TextView
-        android:id="@+id/word_original_value"
+    >
+
+
+    <LinearLayout
+        android:id="@+id/linearContainer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/blue"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:gravity="center"
-        android:layout_marginBottom="50dp"
-        android:text="original word"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        />
+        android:orientation="vertical"
+        android:layout_marginBottom="24dp">
 
-    <TextView
-        android:id="@+id/translation_of_word"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginBottom="50dp"
-        android:text="translation of word"
-        android:textSize="25dp"
 
-        android:textStyle="bold"
-        />
+        <TextView
+            android:id="@+id/word_original_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="24dp"
+            android:gravity="center"
+            android:text="original word"
+            android:textColor="@color/blue"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+
+            />
+
+        <TextView
+            android:id="@+id/word_translation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/word_original_value"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="wordTranslation of word"
+            android:textAlignment="center"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/word_example"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/word_translation"
+            android:paddingBottom="48dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="example"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            />
+
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/btn_show_translation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/translation_of_word"
-        android:text="@string/show_word_translation"
-        android:textSize="14dp"
-        android:padding="15dp"
-        android:textAllCaps="false"
-        android:drawableLeft="@drawable/translate"/>
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"
 
-</LinearLayout>
+        android:drawableLeft="@drawable/translate"
+        android:padding="15dp"
+        android:text="@string/show_word_translation"
+        android:textAllCaps="false"
+        android:textSize="14dp"
+        />
+
+</RelativeLayout>

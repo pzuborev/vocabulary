@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ListFragment;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -18,6 +21,8 @@ import com.pzuborev.vocabuary.Word;
 import com.pzuborev.vocabuary.activity.VocabularyPagerActivity;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class WordListFragment extends ListFragment {
     private ArrayList<Word> mWords;
@@ -25,7 +30,7 @@ public class WordListFragment extends ListFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setHasOptionsMenu(true);
         mWords = Vocabulary.getVocabulary(getActivity()).getWordsArray();
         setListAdapter(new WordListAdapter(getActivity()));
 
@@ -58,5 +63,61 @@ public class WordListFragment extends ListFragment {
             wordTranslation.setText(word.getWordTranslation());
             return convertView;
         }
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+
+        inflater.inflate(R.menu.main_menu, menu);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        sortWords();
+        notifyDataChange();
+    }
+
+    private void notifyDataChange() {
+        ((WordListAdapter)getListAdapter()).notifyDataSetChanged();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_item_shuffle:
+                shuffleWords();
+                notifyDataChange();
+                return true;
+            case R.id.menu_item_sort:
+                sortWords();
+                notifyDataChange();
+                return true;
+            case R.id.menu_item_guess:
+                if(mWords.size() > 0) {
+                    shuffleWords();
+                    Intent i = new Intent(getActivity(), VocabularyPagerActivity.class);
+                    i.putExtra(WordFragment.P_WORD_ID, mWords.get(0).getId());
+                    startActivity(i);
+                }
+
+                return true;
+            default:  return super.onOptionsItemSelected(item);
+        }
+
+    }
+
+    private void shuffleWords() {
+        Collections.shuffle(mWords);
+    }
+
+    private void sortWords() {
+        Collections.sort(mWords, new Comparator<Word>() {
+            @Override
+            public int compare(Word o1, Word o2) {
+                return o1.getOriginalWord().toUpperCase().compareTo(o2.getOriginalWord().toUpperCase());
+            }
+        });
     }
 }

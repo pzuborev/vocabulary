@@ -3,7 +3,9 @@ package com.pzuborev.vocabuary.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.NavUtils;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -42,6 +44,7 @@ public class WordFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
 
         mVocabulary = Vocabulary.getVocabulary(getActivity());
         Bundle arg = getArguments();
@@ -58,7 +61,7 @@ public class WordFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_word, container, false);
         getActivity().setTitle(R.string.remember_the_word);
-
+        getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
         mWordTextView = (TextView) view.findViewById(R.id.word_original_value);
         mWordTextView.setText(mWord.getOriginalWord());
 
@@ -84,5 +87,18 @@ public class WordFragment extends Fragment {
 
 
        return view;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                if(NavUtils.getParentActivityName(getActivity()) != null) {
+                    NavUtils.navigateUpFromSameTask(getActivity());
+                    return true;
+                }
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

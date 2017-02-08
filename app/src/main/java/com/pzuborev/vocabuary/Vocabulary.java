@@ -5,6 +5,7 @@ import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.UUID;
 
 public class Vocabulary {
@@ -20,7 +21,7 @@ public class Vocabulary {
         mJSONSerializer = new VocabularyJSONSerializer(context, mFileName);
         try {
             mWords = mJSONSerializer.loadWord();
-            Collections.shuffle(mWords);
+            sort();
         } catch (Exception e) {
             Log.e(TAG, "Error on vocabulary loading" + e.getMessage(), e);
             mWords = new ArrayList<>();
@@ -73,5 +74,14 @@ public class Vocabulary {
         } catch (Exception e) {
             Log.e(TAG, "Не удалось сохранить данные в файл", e);
         }
+    }
+
+    public void sort(){
+        Collections.sort(mWords, new Comparator<Word>() {
+            @Override
+            public int compare(Word o1, Word o2) {
+                return o1.getOriginalWord().toUpperCase().compareTo(o2.getOriginalWord().toUpperCase());
+            }
+        });
     }
 }
