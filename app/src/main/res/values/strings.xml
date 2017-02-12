@@ -7,4 +7,5 @@
     <string name="menu_item_sort">Sort words</string>
     <string name="menu_item_guess">Guess word translation</string>
     <string name="menu_item_swap_word_and_translation">Swap word and translation</string>
+    <string name="menu_one_item_load_extra">Load extra data</string>
 </resources>

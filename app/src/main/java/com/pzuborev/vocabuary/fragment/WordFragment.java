@@ -4,23 +4,28 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.NavUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.pzuborev.vocabuary.R;
 import com.pzuborev.vocabuary.Vocabulary;
 import com.pzuborev.vocabuary.Word;
 
-import org.w3c.dom.Text;
 
 import java.util.UUID;
 
+
 public class WordFragment extends Fragment {
     // constants
+    public static final String TAG = "WordFragment";
     public static final String P_WORD_ID = "com.pzuborev.vocabuary.fragment.WordFragment.WORD_ID";
     // class fields
     private Word mWord;
@@ -90,6 +95,13 @@ public class WordFragment extends Fragment {
     }
 
     @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+
+        inflater.inflate(R.menu.one_word_menu, menu);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case android.R.id.home:
@@ -97,8 +109,17 @@ public class WordFragment extends Fragment {
                     NavUtils.navigateUpFromSameTask(getActivity());
                     return true;
                 }
+                else return false;
+            case R.id.menu_one_item_load_extra:
+                loadExtra();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
+
+    }
+
+    private void loadExtra() {
+        Log.d(TAG, "loadExtra");
     }
 }
