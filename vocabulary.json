@@ -1,66 +1,337 @@
 [
-{"originalWord":"ask for","wordTranslation":"просить", example: "When I go to the restaurant I always ask for something low fat"},
-{"originalWord":"get back","wordTranslation":"возвращаться", example: "By the time we got back to the hotel, Lydia had already left."},
-{"originalWord":"take out","wordTranslation":"вынимать, забирать, получать", example: "I took some money out of a cash mashine"},
-{"originalWord":"give sth away","wordTranslation":"отдавать, раздавать ", example: "They're giving away a CD with this magazine"},
-{"originalWord":"turn up","wordTranslation":"появляться, приходить ", example: "Fred turned up late again."},
-{"originalWord":"look after sb/sth","wordTranslation":"присматривать за кем-либо/чем-либо", example: "Could you look after the children while I'm out?"},
-{"originalWord":"set off","wordTranslation":"отправляться в путь ", example: "What time are you setting off tomorrow morning?"},
-{"originalWord":"take off (plane)","wordTranslation":"взлетел", example: ""},
-{"originalWord":"pick up (suit)","wordTranslation":"поднял", example: ""},
-{"originalWord":"pick up (taxi)","wordTranslation":"брать пассажира, подвозить; заезжать, заходить (за кем-л.)", example: ""},
-{"originalWord":"hung up","wordTranslation":"повесить телефонную трубку", example: ""},
-{"originalWord":"call back","wordTranslation":"", example: ""},
-{"originalWord":"give up","wordTranslation":"сдаваться ", example: "Do you give up?"},
-{"originalWord":"take up","wordTranslation":"начать заниматься чем-либо", example: "I thought I might take up cycling."},
-{"originalWord":"carry on","wordTranslation":"продолжать ", example: "The doctors have warned him but he just carries on drinking."},
-{"originalWord":"make sth into sth","wordTranslation":"переделывать что-либо во что-либо ", example: "We're going to make the spare room into an office."},
-{"originalWord":"do sth up","wordTranslation":"застегивать; ремонтировать, приводить в порядок ", example: "Do your coat up. It's cold outside."},
-{"originalWord":"go out","wordTranslation":"выходить из дома (чтобы развлечься); встречаться (о влюбленных) ", example: "Are you going out tonight?"},
-{"originalWord":"break-up","wordTranslation":"разрыв (отношений) ", example: "He moved away after the break-up of his marriage."},
-{"originalWord":"sort sth out","wordTranslation":"разбираться с чем-либо, улаживать что-либо ", example: "Have you sorted out your schedule yet?"},
-{"originalWord":"plug in","wordTranslation":"включать в сеть", example: " "},
-{"originalWord":"pass away","wordTranslation":"умереть", example: "She passed away peacefully in her sleep."},
-{"originalWord":"realize","wordTranslation":"осознавать, ясно понимать ", example: "I suddenly realized I'd met him before."},
-{"originalWord":"spokesman, spokeswoman","wordTranslation":"представитель, представительница ", example: "A spokesman for the company refused to comment on the reports"},
-{"originalWord":"admit","wordTranslation":"признавать(ся) ", example: "Both men admitted taking illegal drugs."},
-{"originalWord":"nearly","wordTranslation":"почти, чуть не ", example: "It's nearly three weeks since I last saw her."},
-{"originalWord":"find (sth) out","wordTranslation":"выяснять, обнаруживать ", example: "I must find out the train times."},
-{"originalWord":"look forward to sth/doing sth","wordTranslation":"ждать чего-либо с нетерпением ", example: "I'm really looking forward to seeing him."},
-{"originalWord":"Look out!","wordTranslation":"осторожно! ", example: ""},
-{"originalWord":"sell out","wordTranslation":"распродать", example: "They'd sold out of bread by the time I got there."},
-{"originalWord":"belong in/on/there, etc","wordTranslation":"быть на своем месте ", example: "That chair belongs in the dining room."},
-{"originalWord":"investigate","wordTranslation":"расследовать ", example: "He has been questioned by detectives investigating Jenkins' murder."},
-{"originalWord":"suspect","wordTranslation":"подозреваемый ", example: "He's the prime suspect (= the most likely suspect) in the murder case."},
-{"originalWord":"witness","wordTranslation":"свидетель ", example: "The witness was called to the stand."},
-{"originalWord":"merchant","wordTranslation":"торговец ", example: ""},
-{"originalWord":"evidence","wordTranslation":"свидетельство, данные ", example: "There is no scientific evidence that the drug is addictive."},
-{"originalWord":"confess","wordTranslation":"признаваться ", example: "Rawlinson finally confessed to the murder."},
-{"originalWord":"nod","wordTranslation":"кивать головой ", example: "They nodded enthusiastically at the proposal."},
-{"originalWord":"innocent","wordTranslation":"невиновный ", example: "He claims to be innocent of the crime."},
-{"originalWord":"elaborate","wordTranslation":"сложный, замысловатый ", example: ""},
-{"originalWord":"volition","wordTranslation":"воля", example: "He left the firm of his own volition (= because he decided to)."},
-{"originalWord":"intend","wordTranslation":"намереваться ", example: "How long are you intending to stay in Paris?"},
-{"originalWord":"rush hour","wordTranslation":"час пик", example: ""},
-{"originalWord":"traffic jam","wordTranslation":"транспортная пробка ", example: "They got stuck in a traffic jam."},
-{"originalWord":"boarding pass","wordTranslation":"посадочный талон", example: ""},
-{"originalWord":"cut sth down","wordTranslation":"рубить (деревья) ", example: ""},
-{"originalWord":"belongings","wordTranslation":"вещи, пожитки ", example: "I took a few personal belongings with me."},
-{"originalWord":"miserable","wordTranslation":"убогий, жалкий ", example: "Some families are living in miserable conditions."},
-{"originalWord":"put up with sb/sth","wordTranslation":"терпеть кого-либо/что-либо ", example: "He's so rude, I don't know how you put up with him."},
-{"originalWord":"rough hands","wordTranslation":"неровный, шероховатый ", example: ""},
-{"originalWord":"rough time","wordTranslation":"трудный, тяжелый ", example: "She's having a rough time at work."},
-{"originalWord":"calm (sb) down","wordTranslation":"успокаивать(ся) ", example: "Calm down and tell me what's wrong."},
-{"originalWord":"set up","wordTranslation":"учреждать; основывать, открывать (дело, предприятие и т. п.)", example: ""},
-{"originalWord":"pay sb/sth back","wordTranslation":"возвращать долг ", example: "Only borrow money if you're sure you can pay it back."},
-{"originalWord":"look for","wordTranslation":"искать", example: "I knew Larry would come and look for me. "},
-{"originalWord":"turn up (light)","wordTranslation":"прибавлять (газ, свет), усиливать (звук)", example: ""},
-{"originalWord":"rush","wordTranslation":"торопить(ся), быстро доставлять ", example: "We rushed out into the street to see what all the noise was."},
-{"originalWord":"residential","wordTranslation":"жилой ", example: ""},
-{"originalWord":"fortunate","wordTranslation":"счастливый, удачливый ", example: "I'm very fortunate to be alive."},
-{"originalWord":"turn out","wordTranslation":"прибывать, собираться", example: "Over 800 people turned out for the protest"},
-{"originalWord":"work out","wordTranslation":"заниматься спортом, тренироваться ", example: ""},
-{"originalWord":"cut back (sth)","wordTranslation":"сокращать, уменьшать ", example: "We have had to cut back on training this year."}
-
-
+	{
+		"originalWord": "ask for",
+		"wordTranslation": "просить",
+		example: "When I go to the restaurant I always ask for something low fat"
+	},
+	{
+		"originalWord": "get back",
+		"wordTranslation": "возвращаться",
+		example: "By the time we got back to the hotel, Lydia had already left."
+	},
+	{
+		"originalWord": "take out",
+		"wordTranslation": "вынимать, забирать, получать",
+		example: "I took some money out of a cash mashine"
+	},
+	{
+		"originalWord": "give sth away",
+		"wordTranslation": "отдавать, раздавать ",
+		example: "They're giving away a CD with this magazine"
+	},
+	{
+		"originalWord": "turn up",
+		"wordTranslation": "появляться, приходить ",
+		example: "Fred turned up late again."
+	},
+	{
+		"originalWord": "look after sb/sth",
+		"wordTranslation": "присматривать за кем-либо/чем-либо",
+		example: "Could you look after the children while I'm out?"
+	},
+	{
+		"originalWord": "set off",
+		"wordTranslation": "отправляться в путь ",
+		example: "What time are you setting off tomorrow morning?"
+	},
+	{
+		"originalWord": "take off (plane)",
+		"wordTranslation": "взлетел",
+		example: ""
+	},
+	{
+		"originalWord": "pick up (suit)",
+		"wordTranslation": "поднял",
+		example: ""
+	},
+	{
+		"originalWord": "pick up (taxi)",
+		"wordTranslation": "брать пассажира, подвозить; заезжать, заходить (за кем-л.)",
+		example: ""
+	},
+	{
+		"originalWord": "hung up",
+		"wordTranslation": "повесить телефонную трубку",
+		example: ""
+	},
+	{
+		"originalWord": "call back",
+		"wordTranslation": "",
+		example: ""
+	},
+	{
+		"originalWord": "give up",
+		"wordTranslation": "сдаваться ",
+		example: "Do you give up?"
+	},
+	{
+		"originalWord": "take up",
+		"wordTranslation": "начать заниматься чем-либо",
+		example: "I thought I might take up cycling."
+	},
+	{
+		"originalWord": "carry on",
+		"wordTranslation": "продолжать ",
+		example: "The doctors have warned him but he just carries on drinking."
+	},
+	{
+		"originalWord": "make sth into sth",
+		"wordTranslation": "переделывать что-либо во что-либо ",
+		example: "We're going to make the spare room into an office."
+	},
+	{
+		"originalWord": "do sth up",
+		"wordTranslation": "застегивать; ремонтировать, приводить в порядок ",
+		example: "Do your coat up. It's cold outside."
+	},
+	{
+		"originalWord": "go out",
+		"wordTranslation": "выходить из дома (чтобы развлечься); встречаться (о влюбленных) ",
+		example: "Are you going out tonight?"
+	},
+	{
+		"originalWord": "break-up",
+		"wordTranslation": "разрыв (отношений) ",
+		example: "He moved away after the break-up of his marriage."
+	},
+	{
+		"originalWord": "sort sth out",
+		"wordTranslation": "разбираться с чем-либо, улаживать что-либо ",
+		example: "Have you sorted out your schedule yet?"
+	},
+	{
+		"originalWord": "plug in",
+		"wordTranslation": "включать в сеть",
+		example: " "
+	},
+	{
+		"originalWord": "pass away",
+		"wordTranslation": "умереть",
+		example: "She passed away peacefully in her sleep."
+	},
+	{
+		"originalWord": "realize",
+		"wordTranslation": "осознавать, ясно понимать ",
+		example: "I suddenly realized I'd met him before."
+	},
+	{
+		"originalWord": "spokesman, spokeswoman",
+		"wordTranslation": "представитель, представительница ",
+		example: "A spokesman for the company refused to comment on the reports"
+	},
+	{
+		"originalWord": "admit",
+		"wordTranslation": "признавать(ся) ",
+		example: "Both men admitted taking illegal drugs."
+	},
+	{
+		"originalWord": "nearly",
+		"wordTranslation": "почти, чуть не ",
+		example: "It's nearly three weeks since I last saw her."
+	},
+	{
+		"originalWord": "find (sth) out",
+		"wordTranslation": "выяснять, обнаруживать ",
+		example: "I must find out the train times."
+	},
+	{
+		"originalWord": "look forward to sth/doing sth",
+		"wordTranslation": "ждать чего-либо с нетерпением ",
+		example: "I'm really looking forward to seeing him."
+	},
+	{
+		"originalWord": "Look out!",
+		"wordTranslation": "осторожно! ",
+		example: ""
+	},
+	{
+		"originalWord": "sell out",
+		"wordTranslation": "распродать",
+		example: "They'd sold out of bread by the time I got there."
+	},
+	{
+		"originalWord": "belong in/on/there, etc",
+		"wordTranslation": "быть на своем месте ",
+		example: "That chair belongs in the dining room."
+	},
+	{
+		"originalWord": "investigate",
+		"wordTranslation": "расследовать ",
+		example: "He has been questioned by detectives investigating Jenkins' murder."
+	},
+	{
+		"originalWord": "suspect",
+		"wordTranslation": "подозреваемый ",
+		example: "He's the prime suspect (= the most likely suspect) in the murder case."
+	},
+	{
+		"originalWord": "witness",
+		"wordTranslation": "свидетель ",
+		example: "The witness was called to the stand."
+	},
+	{
+		"originalWord": "merchant",
+		"wordTranslation": "торговец ",
+		example: ""
+	},
+	{
+		"originalWord": "evidence",
+		"wordTranslation": "свидетельство, данные ",
+		example: "There is no scientific evidence that the drug is addictive."
+	},
+	{
+		"originalWord": "confess",
+		"wordTranslation": "признаваться ",
+		example: "Rawlinson finally confessed to the murder."
+	},
+	{
+		"originalWord": "nod",
+		"wordTranslation": "кивать головой ",
+		example: "They nodded enthusiastically at the proposal."
+	},
+	{
+		"originalWord": "innocent",
+		"wordTranslation": "невиновный ",
+		example: "He claims to be innocent of the crime."
+	},
+	{
+		"originalWord": "elaborate",
+		"wordTranslation": "сложный, замысловатый ",
+		example: ""
+	},
+	{
+		"originalWord": "volition",
+		"wordTranslation": "воля",
+		example: "He left the firm of his own volition (= because he decided to)."
+	},
+	{
+		"originalWord": "intend",
+		"wordTranslation": "намереваться ",
+		example: "How long are you intending to stay in Paris?"
+	},
+	{
+		"originalWord": "rush hour",
+		"wordTranslation": "час пик",
+		example: ""
+	},
+	{
+		"originalWord": "traffic jam",
+		"wordTranslation": "транспортная пробка ",
+		example: "They got stuck in a traffic jam."
+	},
+	{
+		"originalWord": "boarding pass",
+		"wordTranslation": "посадочный талон",
+		example: ""
+	},
+	{
+		"originalWord": "cut sth down",
+		"wordTranslation": "рубить (деревья) ",
+		example: ""
+	},
+	{
+		"originalWord": "belongings",
+		"wordTranslation": "вещи, пожитки ",
+		example: "I took a few personal belongings with me."
+	},
+	{
+		"originalWord": "miserable",
+		"wordTranslation": "убогий, жалкий ",
+		example: "Some families are living in miserable conditions."
+	},
+	{
+		"originalWord": "put up with sb/sth",
+		"wordTranslation": "терпеть кого-либо/что-либо ",
+		example: "He's so rude, I don't know how you put up with him."
+	},
+	{
+		"originalWord": "rough hands",
+		"wordTranslation": "неровный, шероховатый ",
+		example: ""
+	},
+	{
+		"originalWord": "rough time",
+		"wordTranslation": "трудный, тяжелый ",
+		example: "She's having a rough time at work."
+	},
+	{
+		"originalWord": "calm (sb) down",
+		"wordTranslation": "успокаивать(ся) ",
+		example: "Calm down and tell me what's wrong."
+	},
+	{
+		"originalWord": "set up",
+		"wordTranslation": "учреждать; основывать, открывать (дело, предприятие и т. п.)",
+		example: ""
+	},
+	{
+		"originalWord": "pay sb/sth back",
+		"wordTranslation": "возвращать долг ",
+		example: "Only borrow money if you're sure you can pay it back."
+	},
+	{
+		"originalWord": "look for",
+		"wordTranslation": "искать",
+		example: "I knew Larry would come and look for me. "
+	},
+	{
+		"originalWord": "turn up (light)",
+		"wordTranslation": "прибавлять (газ, свет), усиливать (звук)",
+		example: ""
+	},
+	{
+		"originalWord": "rush",
+		"wordTranslation": "торопить(ся), быстро доставлять ",
+		example: "We rushed out into the street to see what all the noise was."
+	},
+	{
+		"originalWord": "residential",
+		"wordTranslation": "жилой ",
+		example: ""
+	},
+	{
+		"originalWord": "fortunate",
+		"wordTranslation": "счастливый, удачливый ",
+		example: "I'm very fortunate to be alive."
+	},
+	{
+		"originalWord": "turn out",
+		"wordTranslation": "прибывать, собираться",
+		example: "Over 800 people turned out for the protest"
+	},
+	{
+		"originalWord": "work out",
+		"wordTranslation": "заниматься спортом, тренироваться ",
+		example: ""
+	},
+	{
+		"originalWord": "cut back (sth)",
+		"wordTranslation": "сокращать, уменьшать ",
+		example: "We have had to cut back on training this year."
+	},
+	{
+		"originalWord": "bring sb up",
+		"wordTranslation": "воспитывать ",
+		example: "She was brought up by her grandparents."
+	},
+	{
+		"originalWord": "affair",
+		"wordTranslation": "дело, ситуация ",
+		example: "The government's handling of the affair has been widely criticized."
+	},
+	{
+		"originalWord": "fate",
+		"wordTranslation": "судьба ",
+		example: "I believe it was fate that caused us to meet again."
+	},
+	{
+		"originalWord": "fellow",
+		"wordTranslation": "парень, малый ",
+		example: ""
+	},
+	{
+		"originalWord": "pick sth/sb out",
+		"wordTranslation": "выбирать что-либо/кого-либо",
+		example: "She picked out a red shirt for me to try on"
+	}
 ]

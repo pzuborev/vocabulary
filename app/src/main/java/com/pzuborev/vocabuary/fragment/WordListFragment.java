@@ -23,6 +23,8 @@ import com.pzuborev.vocabuary.activity.VocabularyPagerActivity;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
+
 
 public class WordListFragment extends ListFragment {
     private ArrayList<Word> mWords;
@@ -33,6 +35,14 @@ public class WordListFragment extends ListFragment {
         setHasOptionsMenu(true);
         mWords = Vocabulary.getVocabulary(getActivity()).getWordsArray();
         setListAdapter(new WordListAdapter(getActivity()));
+
+//        HttpClient httpclient = new DefaultHttpClient();
+//        HttpPost http = new HttpPost("http://site.ru/api.php?");
+//        List nameValuePairs = new ArrayList(2);
+//        nameValuePairs.add(new BasicNameValuePair("login", "user1"));
+//        nameValuePairs.add(new BasicNameValuePair("pswd", "1234"));
+//        http.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+//        String response = (String) httpclient.execute(http, new BasicResponseHandler());
 
     }
 
