@@ -1,8 +1,6 @@
 package com.pzuborev.vocabuary;
 
 
-import android.util.Log;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -16,11 +14,13 @@ public class Word {
     private static final String JSON_ID = "id";
     private static final String JSON_EXAMPLE = "example";
     private static final String TAG = "Word";
+    private static final String JSON_TRANSCRIPTION = "transcription";
 
     private UUID mId;
     private String mOriginalWord;
     private String mWordTranslation;
     private String mExample;
+    private String mTranscription;
 
     public Word(String mOriginalWord, String mWordTranslation) {
         this.mOriginalWord = mOriginalWord;
@@ -37,6 +37,7 @@ public class Word {
         mOriginalWord = jsonObject.getString(JSON_ORIGINAL_WORD);
         mWordTranslation = jsonObject.getString(JSON_WORD_TRANSLATION);
         mExample = jsonObject.getString(JSON_EXAMPLE);
+        mTranscription = (String) jsonObject.opt(JSON_TRANSCRIPTION);
     }
 
     public String getOriginalWord() {
@@ -73,6 +74,7 @@ public class Word {
         jsonObject.put(JSON_WORD_TRANSLATION, getWordTranslation());
         jsonObject.put(JSON_ID, getId());
         jsonObject.put(JSON_EXAMPLE, getExample());
+        jsonObject.put(JSON_TRANSCRIPTION, getTranscription());
         return jsonObject;
     }
 
@@ -82,5 +84,13 @@ public class Word {
 
     public void setExample(String example) {
         mExample = example;
+    }
+
+    public void setTranscription(String transcription) {
+        mTranscription = transcription;
+    }
+
+    public String getTranscription() {
+        return mTranscription;
     }
 }

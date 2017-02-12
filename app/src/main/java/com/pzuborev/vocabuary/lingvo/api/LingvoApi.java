@@ -81,12 +81,13 @@ public class LingvoApi {
         URL url = new URL(getURLRequest(API_V1_1_AUTHENTICATE, null));
         HttpsURLConnection urlConnection = (HttpsURLConnection) url.openConnection();
         urlConnection.setRequestMethod("POST");
-
         urlConnection.setRequestProperty(AUTHORIZATION, BASIC + " " + API_KEY);
+
+        InputStream stream = urlConnection.getInputStream();
         int responseCode = urlConnection.getResponseCode();
         if (responseCode == HttpURLConnection.HTTP_OK) {
             String tokenStr = readBody(urlConnection.getInputStream());
-            if (tokenStr == "") throw new LingvoApiException("Authentication failed. Empty token.");
+            if (tokenStr.equals("")) throw new LingvoApiException("Authentication failed. Empty token.");
             setToken(tokenStr);
         }
         else {
@@ -113,9 +114,11 @@ public class LingvoApi {
 
         int responseCode = urlConnection.getResponseCode();
 
+        InputStream stream = urlConnection.getInputStream();
         if (responseCode == HttpURLConnection.HTTP_OK) {
-            return parseJSONTranslationCard(readBody(urlConnection.getInputStream()));
+            return parseJSONTranslationCard(readBody(stream));
         } else {
+            Log.d(TAG, "Request failed. " + urlConnection.getResponseMessage());
             throw new LingvoApiException("Request failed. " + urlConnection.getResponseMessage());
         }
     }
@@ -135,26 +138,43 @@ public class LingvoApi {
                 for (int j = 0; j < bodies.length(); j++) {
                     JSONObject body = (JSONObject) bodies.get(j);
                     JSONArray markups = (JSONArray) body.opt(MARKUP);
-                    if (markups != null) {
-                        for (int k = 0; k < markups.length(); k++) {
-                            JSONObject markup = (JSONObject) markups.get(k);
-                            String node = (String) markup.get(NODE);
-
-                            switch (node) {
-                                case TRANSCRIPTION_NODE:
-                                    card.setTranscription((String) markup.get(TEXT));
-                                    break;
-                                case SOUND_NODE:
-                                    card.setFileName((String) markup.get(FILE_NAME));
-                                    break;
-                            }
-                        }
-                    }
-
+                    parseMarkups(card, markups);
+                    JSONArray items = (JSONArray) body.opt("Items");
+                    parseItems(card, items);
                 }
             }
         }
         return cards;
+    }
+
+    private void parseItems(LingvoCard card, JSONArray items) throws JSONException {
+        if (items == null) return;
+        for (int k = 0; k < items.length(); k++) {
+            JSONObject item = (JSONObject) items.get(k);
+            JSONArray markups = (JSONArray) item.opt(MARKUP);
+            parseMarkups(card, markups);
+        }
+    }
+
+    private void parseMarkups(LingvoCard card, JSONArray markups) throws JSONException {
+        if (markups == null) return;
+        for (int k = 0; k < markups.length(); k++) {
+            JSONObject markup = (JSONObject) markups.get(k);
+            String node = (String) markup.get(NODE);
+
+            switch (node) {
+                case TRANSCRIPTION_NODE:
+                    card.setTranscription((String) markup.get(TEXT));
+                    break;
+                case SOUND_NODE:
+                    card.setFileName((String) markup.get(FILE_NAME));
+                    break;
+            }
+            JSONArray markups2 = (JSONArray) markup.opt(MARKUP);
+            parseMarkups(card, markups2);
+
+        }
+
     }
 
     public void setToken(String token) {

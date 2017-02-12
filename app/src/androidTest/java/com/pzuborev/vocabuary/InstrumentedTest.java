@@ -53,12 +53,12 @@ public class InstrumentedTest {
     @Test
     public void lingvoApi() throws Exception {
         LingvoApi lingvoApi = new LingvoApi();
-            ArrayList<LingvoCard>  cards = lingvoApi.readTranslation("police", LANG_ENG, LANG_RUS);
+            ArrayList<LingvoCard>  cards = lingvoApi.readTranslation("elaborate", LANG_ENG, LANG_RUS);
             Assert.assertNotNull("cards is null", cards);
             Assert.assertTrue("cards is empty", cards.size() > 0);
             System.out.println("-------------------------------------------------------");
             for (LingvoCard c: cards) {
-                Log.d(TAG, "Transcription = " + c.getTranscription());
+                Log.d(TAG, "Transcription = " + c.getTranscription() + " " + c.getFileName());
             }
 
     }

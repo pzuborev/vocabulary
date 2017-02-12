@@ -35,10 +35,22 @@
             />
 
         <TextView
-            android:id="@+id/word_translation"
+            android:id="@+id/word_transcription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/word_original_value"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="transcription"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            />
+
+        <TextView
+            android:id="@+id/word_translation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/word_transcription"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:text="wordTranslation of word"
