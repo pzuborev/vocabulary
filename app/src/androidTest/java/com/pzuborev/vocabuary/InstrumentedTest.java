@@ -1,9 +1,7 @@
 package com.pzuborev.vocabuary;
 
 import android.content.Context;
-import android.nfc.Tag;
 import android.support.test.InstrumentationRegistry;
-import android.support.test.espresso.core.deps.guava.base.Optional;
 import android.support.test.runner.AndroidJUnit4;
 import android.util.Log;
 
@@ -12,22 +10,12 @@ import com.pzuborev.vocabuary.lingvo.api.LingvoCard;
 
 import junit.framework.Assert;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-import org.json.JSONTokener;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.StringReader;
-import java.io.StringWriter;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
-
-import javax.net.ssl.HttpsURLConnection;
+import java.util.List;
+import java.util.Set;
 
 import static com.pzuborev.vocabuary.lingvo.api.LingvoApi.LANG_ENG;
 import static com.pzuborev.vocabuary.lingvo.api.LingvoApi.LANG_RUS;
@@ -60,6 +48,15 @@ public class InstrumentedTest {
             for (LingvoCard c: cards) {
                 Log.d(TAG, "Transcription = " + c.getTranscription() + " " + c.getFileName());
             }
+
+    }
+
+    @Test
+    public void testUnitList() throws Exception {
+        List<String> unitList = UnitSet.get().getAvailableUnits();
+        for (String s: unitList) {
+            Log.d("UNIT_TEST", "_"+UnitSet.get().fileNameFromUnitName(s)+"_");
+        }
 
     }
 }

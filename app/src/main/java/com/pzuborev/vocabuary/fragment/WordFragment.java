@@ -40,6 +40,7 @@ public class WordFragment extends Fragment {
     private TextView mTranscriptionTextView;
 
     public static WordFragment newInstance(UUID wordId) {
+        Log.d(TAG, "newInstance = " + wordId.toString());
         WordFragment fragment = new WordFragment();
         if (wordId != null) {
             Bundle arg = new Bundle();
@@ -58,6 +59,7 @@ public class WordFragment extends Fragment {
         Bundle arg = getArguments();
         if (arg != null) {
             UUID wordId = (UUID) arg.getSerializable(P_WORD_ID);
+            Log.d(TAG, "onCreate = " + wordId.toString());
             if (wordId != null) {
                 mWord = mVocabulary.findWord(wordId);
             }
@@ -170,7 +172,7 @@ public class WordFragment extends Fragment {
                 for (int i = 0; i < lingvoCards.size(); i++) {
                     LingvoCard card = lingvoCards.get(i);
                     String transcription = card.getTranscription();
-                    Log.d(TAG, "dic = " + card.getDictionaryName()+ " transcription = " + card.getTranscription());
+                    Log.d(TAG, "dic = " + card.getDictionaryName() + " transcription = " + card.getTranscription());
                     if (transcription != null) {
                         Log.d(TAG, "Loaded transcription = " + transcription);
                         setTranscription(transcription);

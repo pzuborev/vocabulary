@@ -1,4 +1,8 @@
 <resources>
+    <string-array name="unit_array">
+        <item>Unit 7</item>
+        <item>Extra</item>
+    </string-array>
     <string name="app_name">Vocabulary</string>
     <string name="show_word_translation">Translate</string>
     <string name="err_file_not_found">File not found</string>
@@ -8,4 +12,6 @@
     <string name="menu_item_guess">Guess word translation</string>
     <string name="menu_item_swap_word_and_translation">Swap word and translation</string>
     <string name="menu_one_item_load_extra">Load extra data</string>
+    <string name="drawer_open">drawer open</string>
+    <string name="drawer_close">drawer close</string>
 </resources>

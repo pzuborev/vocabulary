@@ -1,11 +1,12 @@
 package com.pzuborev.vocabuary.fragment;
 
 
+import android.app.ListFragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v4.app.ListFragment;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -23,26 +24,28 @@ import com.pzuborev.vocabuary.activity.VocabularyPagerActivity;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.List;
 
 
 public class WordListFragment extends ListFragment {
+    public static final String ARG_UNIT_NAME = "com.pzuborev.WordListFragment.ARG_UNIT_NAME";
+    private static final String TAG = "WordListFragment";
     private ArrayList<Word> mWords;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(TAG, "OnCreate");
         setHasOptionsMenu(true);
+
+        Bundle arg = getArguments();
+        if (arg != null) {
+            String unitName;
+            unitName = arg.getString(ARG_UNIT_NAME);
+            Vocabulary.getVocabulary(getActivity()).reload(unitName);
+        }
+
         mWords = Vocabulary.getVocabulary(getActivity()).getWordsArray();
         setListAdapter(new WordListAdapter(getActivity()));
-
-//        HttpClient httpclient = new DefaultHttpClient();
-//        HttpPost http = new HttpPost("http://site.ru/api.php?");
-//        List nameValuePairs = new ArrayList(2);
-//        nameValuePairs.add(new BasicNameValuePair("login", "user1"));
-//        nameValuePairs.add(new BasicNameValuePair("pswd", "1234"));
-//        http.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-//        String response = (String) httpclient.execute(http, new BasicResponseHandler());
 
     }
 
@@ -50,6 +53,7 @@ public class WordListFragment extends ListFragment {
     public void onListItemClick(ListView l, View v, int position, long id) {
         Word word = ((WordListAdapter) getListAdapter()).getItem(position);
         Intent i = new Intent(getActivity(), VocabularyPagerActivity.class);
+        Log.d(TAG, "OnListItemClick ^^ " +  word.getId()+ " " + word.getOriginalWord());
         i.putExtra(WordFragment.P_WORD_ID, word.getId());
         startActivity(i);
     }

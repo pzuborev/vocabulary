@@ -6,26 +6,28 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 public class Vocabulary {
     private static final String TAG = "Vocabulary";
+
     private static Vocabulary mVocabulary;
-    private final String mFileName = "vocabulary.json";
+    private String mFileName;
     private Context mContext;
     private ArrayList<Word> mWords;
     private VocabularyJSONSerializer mJSONSerializer;
+    private String mCurUnitName;
 
     private Vocabulary(Context context) {
+        Log.d(TAG, "Create");
         mContext = context;
-        mJSONSerializer = new VocabularyJSONSerializer(context, mFileName);
-        try {
-            mWords = mJSONSerializer.loadWord();
-            sort();
-        } catch (Exception e) {
-            Log.e(TAG, "Error on vocabulary loading" + e.getMessage(), e);
-            mWords = new ArrayList<>();
-        }
+        List<String> units = UnitSet.get().getAvailableUnits();
+        if (units.size() > 0)
+            reload(units.get(0));
+        else
+            reload("");
 
 
     }
@@ -76,7 +78,7 @@ public class Vocabulary {
         }
     }
 
-    public void sort(){
+    public void sort() {
         Collections.sort(mWords, new Comparator<Word>() {
             @Override
             public int compare(Word o1, Word o2) {
@@ -84,4 +86,22 @@ public class Vocabulary {
             }
         });
     }
+
+    public void reload(String unitName) {
+        Log.d(TAG, "reload " + unitName);
+        if ( mCurUnitName != null && !mCurUnitName.equals(unitName) )
+            return;
+        mFileName = UnitSet.get().fileNameFromUnitName(unitName);
+        String directory = UnitSet.get().getDirectory();
+        mJSONSerializer = new VocabularyJSONSerializer(mContext, mFileName, directory);
+        try {
+            mWords = mJSONSerializer.loadWord();
+            sort();
+        } catch (Exception e) {
+            Log.e(TAG, "Error on vocabulary loading" + e.getMessage(), e);
+            mWords = new ArrayList<>();
+        }
+    }
+
+
 }

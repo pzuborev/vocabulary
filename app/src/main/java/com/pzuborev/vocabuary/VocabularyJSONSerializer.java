@@ -22,12 +22,14 @@ import java.util.ArrayList;
 
 public class VocabularyJSONSerializer {
     private static final String TAG = "VocabularyJSONSerializer";
-    //    private static final String DIRECTORY_VOCABULARY = "vocabulary";
+
+    private final String mDirectory;
     private Context mContext;
     private String mFileName;
 
-    public VocabularyJSONSerializer(Context context, String fileName) {
+    public VocabularyJSONSerializer(Context context, String fileName, String directory) {
         mContext = context;
+        mDirectory = directory;
         mFileName = fileName;
     }
 
@@ -82,8 +84,7 @@ public class VocabularyJSONSerializer {
     }
 
     private String getFilePath() {
-        File file = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-        return file.getAbsoluteFile() + "/" + mFileName;
+        return mDirectory + "/" + mFileName;
     }
 }
 

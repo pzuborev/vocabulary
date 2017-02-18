@@ -36,6 +36,7 @@ public class VocabularyPagerActivity extends FragmentActivity {
             @Override
             public Fragment getItem(int position) {
                 Word word = mVocabulary.getWord(position);
+                Log.d(TAG, "getItem = " + word.getOriginalWord() + " position = " + position);
                 return WordFragment.newInstance(word.getId());
             }
 
@@ -46,7 +47,9 @@ public class VocabularyPagerActivity extends FragmentActivity {
         });
 
         UUID wordId = (UUID) getIntent().getSerializableExtra(WordFragment.P_WORD_ID);
+        Log.d(TAG, "OnCreate = " + wordId);
         Word word = mVocabulary.findWord(wordId);
+        Log.d(TAG, "OnCreate = " + word.getOriginalWord() + " position = " + mVocabulary.getPosition(word));
         mViewPager.setCurrentItem(mVocabulary.getPosition(word));
 
     }
